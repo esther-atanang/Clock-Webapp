@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* styles.css */
+
+@layer base {
+  body {
+    @apply box-border p-0 m-0 text-white;
+  }
+}
+
+
+@layer utilities {
+  @keyframes slideIn {
+    0% {
+   
+      transform: translateY(10px);
+    }
+    100% {
+     
+      transform: translateY(5px);
+    }
+  }
+  @keyframes slideOut{
+    from{
+      transform: translateY(0px);
+    }
+    to{
+       transform: translateY(30px);
+    } 
+  }
+  
+  .bg-morning {
+    @apply bg-mobile-day md:bg-tab-day xl:bg-desktop-day;
+  }
+   
+  .bg-night {
+    @apply bg-mobile-night md:bg-tab-night xl:bg-desktop-night;
+  }
+
+  .bg-day {
+    @apply bg-mobile-day md:bg-tab-day xl:bg-desktop-mid;
+  }
+
+  .tab-up {
+    @apply bg-white backdrop-blur-sm bg-opacity-60 text-mainColor p-8 pt-11 h-full slideIn;
+  }
+
+  .tab-down {
+    @apply bg-white backdrop-blur-sm bg-opacity-60 text-mainColor p-8 pt-11 hidden;
+  }
+
+  .show-quote {
+    @apply w-full;
+  }
+
+  .hide-quote {
+    @apply hidden;
+  }
+
+  .move-time-down {
+    @apply flex flex-col justify-between p-6 w-full ns:p-8 pt-8 md:p-14 md:pt-20 xl:pt-9 xl:pl-28 xl:pr-32 h-full;
+  }
+
+  .move-time-up {
+    @apply block p-8 pt-20 pb-5 ns:pt-28 ns:pl-9 w-full md:p-14 md:pb-0 md:pt-20 xl:pl-28 xl:pr-32 xl:grid lg:pb-8  h-full;
+  }
+
+  .slideIn{
+    animation: slideIn 0.2s linear;
+  }
+  .slideOut{
+    animation: slideOut 0.3s ease-in;
+    animation-fill-mode: backwards;
+  } 
+}
